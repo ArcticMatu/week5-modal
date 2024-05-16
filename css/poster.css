@@ -184,7 +184,6 @@ footer ul li a {
     color: rgb(255, 255, 255);
 }
 
-
 @keyframes zoom-in {
     0% {transform: scale(0);}
     100% {transform: scale(1);}
@@ -201,3 +200,65 @@ footer ul li a {
     border-radius: 10px;
     width: 300px;
 }
+
+.carousel {
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.carousel img {
+    margin-top: 2rem;
+    width: 100%;
+    border-radius: 10px;
+    animation: fade-in-left 1s ease forwards;
+}
+
+@keyframes fade-in-left {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.carousel .carousel__item, 
+.carousel .carousel__item--hidden {
+    display: none;
+}
+
+.carousel .carousel__item--visible {
+    display: block;
+    animation: fadeIn .6s;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.carousel .carousel__actions {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel .carousel__actions button {
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50px;
+    cursor: bold;
+    height: 50px;
+    width: 50px;
+    border: 0;
+    background-color: rgb(98, 85, 68, 0.739);
+    font-size: 2rem;
+    color: #fff;
+    margin: 0.5rem;
+ }
